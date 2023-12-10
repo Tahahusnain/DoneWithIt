@@ -1,15 +1,16 @@
+import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import WelcomeScreen from "./app/screen/WelcomeScreen";
-import ViewImageScreen from "./app/screen/ViewImageScreen";
-import AppButton from "./app/components/AppButton";
-import SaleItem from "./app/screen/SaleItem";
-import MessagesScreen from "./app/screen/MessagesScreen";
-import ListingDetailesScreen from "./app/screen/ListingDetailesScreen";
+import { StyleSheet, Text, View } from "react-native";
+import Screen from "./app/components/Screen";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { TextInput, Switch } from "react-native";
+import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screen/LoginScreen";
+import ListingEditScreen from "./app/screen/ListingEditScreen";
 
 export default function App() {
-  return <MessagesScreen  />;
+  return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({
@@ -19,3 +20,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+{
+  /* <AppPicker
+selectedItem={category}
+onSelectItem={(item) => setCategory(item)}
+items={categories}
+icon="apps"
+placeholder="Category"
+/> */
+}

@@ -1,14 +1,19 @@
 import React from "react";
-import { Text, Platform, StyleSheet } from "react-native";
-
+import { Text, StyleSheet } from "react-native";
+import { useCustomFonts, customFontFamily } from "../config/fontFamily";
 const AppText = ({ children, style }) => {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+  console.log(children);
+  const fontsLoaded = useCustomFonts();
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  return <Text style={[styles.text, customFontFamily, style]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 18,
-    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },
 });
 
